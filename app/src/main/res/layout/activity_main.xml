@@ -58,4 +58,38 @@
         android:layout_marginTop="5dp"
         />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="5dp"
+        >
+
+        <Button
+            android:id="@+id/btnLeftTabbar"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="1dp"
+            android:text="u"/>
+        <Button
+            android:id="@+id/btnMiddleTabbar"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="1dp"
+            android:text="w"/>
+        <Button
+            android:id="@+id/btnRightTabbar"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="1dp"
+            android:text="u"/>
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
