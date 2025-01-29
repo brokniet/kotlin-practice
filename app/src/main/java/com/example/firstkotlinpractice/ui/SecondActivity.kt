@@ -1,26 +1,27 @@
-package com.example.firstkotlinpractice
+package com.example.firstkotlinpractice.ui
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.example.firstkotlinpractice.R
+import com.example.firstkotlinpractice.databinding.ActivitySecondBinding
 
 class SecondActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivitySecondBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_second)
+        binding = ActivitySecondBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        var textWelcome = findViewById<TextView>(R.id.textWelcome)
-        var btnBack = findViewById<Button>(R.id.btnBack)
         var username = intent.extras?.getString("USERNAME").orEmpty()
 
-        textWelcome.setText("Hola $username")
+        binding.textWelcome.setText("Hola $username")
 
-        btnBack.setOnClickListener {
+        binding.btnBack.setOnClickListener {
             var intent = Intent(this, MainActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
             startActivity(intent)
