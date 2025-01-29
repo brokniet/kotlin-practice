@@ -5,12 +5,15 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
 import com.example.firstkotlinpractice.R
 import com.example.firstkotlinpractice.databinding.ActivitySecondBinding
 
 class SecondActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySecondBinding
+    private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,6 +21,8 @@ class SecondActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         var username = intent.extras?.getString("USERNAME").orEmpty()
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
+        navController = navHostFragment.navController
 
         binding.textWelcome.setText("Hola $username")
 
