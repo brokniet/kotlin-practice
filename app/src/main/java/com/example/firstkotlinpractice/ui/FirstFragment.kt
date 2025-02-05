@@ -1,4 +1,4 @@
-package com.example.firstkotlinpractice
+package com.example.firstkotlinpractice.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.example.firstkotlinpractice.R
 import com.example.firstkotlinpractice.databinding.FragmentFirstBinding
 
 class FirstFragment : Fragment() {

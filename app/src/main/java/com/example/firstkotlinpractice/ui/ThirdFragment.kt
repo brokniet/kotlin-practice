@@ -1,4 +1,4 @@
-package com.example.firstkotlinpractice
+package com.example.firstkotlinpractice.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,20 +6,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.example.firstkotlinpractice.databinding.FragmentSecondBinding
+import com.example.firstkotlinpractice.R
+import com.example.firstkotlinpractice.databinding.FragmentThirdBinding
 
+class ThirdFragment : Fragment() {
 
-class SecondFragment : Fragment() {
-
-    private lateinit var binding: FragmentSecondBinding
+    private lateinit var binding: FragmentThirdBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
-        binding = FragmentSecondBinding.inflate(inflater, container, false)
+        binding = FragmentThirdBinding.inflate(inflater, container, false)
         val btnNavegar = binding.btnNavegar
         btnNavegar.setOnClickListener {
-            findNavController().navigate(R.id.action_secondFragment_to_thirdFragment)
+            findNavController().navigate(R.id.action_thirdFragment_to_secondFragment)
         }
         return binding.root
     }
