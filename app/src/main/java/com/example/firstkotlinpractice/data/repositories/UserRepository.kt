@@ -11,15 +11,13 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
-val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
+val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")//meter adentro de la clase?
 
 class UserRepository @Inject constructor(
     private val context: Context
 ) {
 
-    companion object {
-         var userKey = stringPreferencesKey("USER_KEY")
-    }
+    private val userKey = stringPreferencesKey("USER_KEY")
 
     public suspend fun updateUser(user: String) {
         context.dataStore.edit { settings ->

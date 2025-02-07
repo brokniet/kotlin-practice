@@ -19,12 +19,14 @@ val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "se
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
+    //private lateinit var loginViewModel: LoginViewModel
     private val loginViewModel: LoginViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         //loginViewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
+
         setContentView(binding.root)
 
         val btnCambiarUsuario = binding.btnCambiarUsuario
@@ -32,7 +34,11 @@ class LoginActivity : AppCompatActivity() {
         val inputUser = binding.inputUser
 
         btnCambiarUsuario.isEnabled = false
+
         btnIngresar.setOnClickListener {
+            loginViewModel.setUser(inputUser.text.toString())
+            val intent = Intent(this, AppActivity::class.java)
+            startActivity(intent)
         }
     }
 }

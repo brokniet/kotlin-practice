@@ -1,5 +1,7 @@
 package com.example.firstkotlinpractice.ui.viewmodels
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.firstkotlinpractice.data.repositories.UserRepository
@@ -12,12 +14,13 @@ class LoginViewModel @Inject constructor(
     private val userRepository: UserRepository
 ) : ViewModel() {
 
-    fun getUser(): String? {
-        var user: String? = null
+    private val _user = MutableLiveData<String>()
+    val user: LiveData<String> = _user
+
+    fun getUser() {
         viewModelScope.launch {
-            user = userRepository.getUser()
+            _user.value = userRepository.getUser()
         }
-        return user
     }
 
     fun setUser(user: String) {
