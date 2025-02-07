@@ -1,9 +1,7 @@
-package com.example.firstkotlinpractice.ui
+package com.example.firstkotlinpractice.ui.deprecated
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment

@@ -1,4 +1,4 @@
-package com.example.firstkotlinpractice.ui
+package com.example.firstkotlinpractice.ui.deprecated
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

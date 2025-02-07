@@ -1,12 +1,9 @@
-package com.example.firstkotlinpractice.ui
+package com.example.firstkotlinpractice.ui.deprecated
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import com.example.firstkotlinpractice.R
 import com.example.firstkotlinpractice.databinding.ActivityMainBinding
-import com.google.android.material.textfield.TextInputEditText
 
 class MainActivity : AppCompatActivity() {
 
