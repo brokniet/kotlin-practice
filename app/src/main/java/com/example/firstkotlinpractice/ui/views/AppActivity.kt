@@ -27,7 +27,11 @@ class AppActivity : AppCompatActivity() {
 
         val tvUser = binding.tvUser
 
-
+        /*
+        * BUG: La primera vez que se llega a esta Activity, el user no se recupera correctamente, sino que
+        * devuelve una version previa. Lo debuggee por arriba y parece estar seteando bien el valor, asumo
+        * que el problema sera algo de la asincronia, o el como recupero el valor.
+        */
         loginViewModel.user.observe(this, Observer { user ->
             tvUser.text = user
         })
