@@ -1,9 +1,7 @@
-package com.example.firstkotlinpractice.ui.views
+package com.example.firstkotlinpractice.ui.views.activities
 
 import android.content.Context
-import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.datastore.core.DataStore
@@ -36,8 +34,6 @@ class LoginActivity : AppCompatActivity() {
             btnCambiarUsuario.isEnabled = isUserSaved
             inputUser.isEnabled = !isUserSaved
             inputUser.setText(user)
-            val test = user.toString()
-            Log.i("test", "test $test")
         })
 
         loginViewModel.getUser()

@@ -7,7 +7,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.firstkotlinpractice.data.repositories.UserRepository
-import com.example.firstkotlinpractice.ui.views.AppActivity
+import com.example.firstkotlinpractice.ui.views.activities.AppActivity
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
