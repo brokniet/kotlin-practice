@@ -1,4 +1,4 @@
 package com.example.firstkotlinpractice.ui.viewmodels
 
-class AppViewModel {
+class ProfileViewModel {
 }

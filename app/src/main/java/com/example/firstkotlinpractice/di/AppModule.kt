@@ -1,6 +1,8 @@
 package com.example.firstkotlinpractice.di
 
 import android.content.Context
+import android.media.Image
+import com.example.firstkotlinpractice.data.repositories.ImageRepository
 import com.example.firstkotlinpractice.data.repositories.UserRepository
 import dagger.Module
 import dagger.Provides
@@ -17,6 +19,12 @@ object AppModule {
     @Singleton
     fun provideUserRepository(@ApplicationContext context: Context): UserRepository {
         return UserRepository(context)
+    }
+
+    @Provides
+    @Singleton
+    fun provideImageRepository(): ImageRepository {
+        return ImageRepository()
     }
 
 }

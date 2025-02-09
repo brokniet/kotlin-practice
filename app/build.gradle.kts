@@ -55,19 +55,31 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
+    //Fragments & Nav
     implementation("androidx.navigation:navigation-fragment-ktx:2.3.5")
     implementation("androidx.navigation:navigation-ui-ktx:2.3.5")
     implementation("androidx.navigation:navigation-dynamic-features-fragment:2.3.5")
+    //ViewModel
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.0")
+    //LiveData
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.5.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.7")
+    //DataStore
     implementation("androidx.datastore:datastore-preferences:1.1.2")
     implementation("androidx.datastore:datastore-core:1.1.2")
-
     //Dagger - Hilt
     implementation("com.google.dagger:hilt-android:2.55")
     kapt("com.google.dagger:hilt-compiler:2.55")
-
+    //Retrofit
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    //GSON
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    //Corutinas
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
+    //Glide
+    implementation("com.github.bumptech.glide:glide:4.13.0")
+    kapt("com.github.bumptech.glide:compiler:4.13.0")
 }
 
 kapt {
