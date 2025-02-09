@@ -3,8 +3,10 @@
 
     <item android:title="Home"
         android:id="@+id/homeFragment"
-        android:icon="@drawable/home"/>
+        android:icon="@drawable/home"
+        android:iconTint="@color/white"/>
     <item android:title="Profile"
         android:id="@+id/profileFragment"
-        android:icon="@drawable/person"/>
+        android:icon="@drawable/person"
+        android:iconTint="@color/white"/>
 </menu>

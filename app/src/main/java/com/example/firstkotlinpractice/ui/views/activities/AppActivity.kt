@@ -1,6 +1,8 @@
 package com.example.firstkotlinpractice.ui.views.activities
 
 import android.os.Bundle
+import android.view.MenuItem
+import androidx.activity.addCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -24,7 +26,7 @@ class AppActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityAppBinding
     private lateinit var navController: NavController
-    private val loginViewModel: LoginViewModel by viewModels()//PARA TEST, BORRAR DSP
+    private val loginViewModel: LoginViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,32 +35,28 @@ class AppActivity : AppCompatActivity() {
 
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.navHostFragment) as NavHostFragment
         navController = navHostFragment.navController
-        //setupActionBarWithNavController(navController)
-
         val bottomNavBar = binding.bottomNavigationView
         bottomNavBar.setupWithNavController(navController)
 
-        /*
-        val navHostFragment = binding.navHostFragment
-        val navController = navHostFragment.findNavController()
-        val bottomNavBar = binding.bottomNavigationView
-        bottomNavBar.setupWithNavController(navController)
-        */
+        val toolbar = binding.toolbar
+        setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
 
-        //val tvUser = binding.tvUser
-        /*
-        * BUG: La primera vez que se llega a esta Activity, el user no se recupera correctamente, sino que
-        * devuelve una version previa. Lo debuggee por arriba y parece estar seteando bien el valor, asumo
-        * que el problema sera algo de la asincronia, o el como recupero el valor.
-        */
-        /*
         loginViewModel.user.observe(this, Observer { user ->
-            tvUser.text = user
+            supportActionBar?.title = "Hola $user"
         })
-        loginViewModel.getUser()*/
+        loginViewModel.getUser()
     }
 
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp() || super.onSupportNavigateUp()
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if(item.itemId == android.R.id.home) {
+            finish()
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
