@@ -1,5 +1,6 @@
 package com.example.firstkotlinpractice.ui.viewmodels
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -28,6 +29,7 @@ class HomeViewModel @Inject constructor(
                 //agregarle algo para el paginado, ir sumando los ids a la query de la url, etc
                 _imageList.postValue(imageRepository.getImages().body())
             } catch (e: Exception) {
+                Log.e("Error", "Error cargando imagenes: $e")
                 //agregar manejo
             }
         }

@@ -8,7 +8,9 @@ import retrofit2.Response
 class ImageRepository() {
 
     private val baseUrl = "https://picsum.photos/"
-    private val imagesApi = RetrofitHelper.getInstance(baseUrl).create(ImageService::class.java)
+    private val imagesApi = RetrofitHelper
+        .getInstance(baseUrl)
+        .create(ImageService::class.java)
 
     suspend fun getImages(): Response<List<Image>> {
         return imagesApi.getImageList()
